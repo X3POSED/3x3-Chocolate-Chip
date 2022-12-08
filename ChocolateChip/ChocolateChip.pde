@@ -6,8 +6,8 @@ void setup () {
   //fullscreen(); //displayWidth //displayHeight
   appWidth = width;
   appHeight = height;
-  //Assignment: Display Algorithm from Hello WOrld
-  display();
+  //Display Algorithm from Hello WOrld
+  display(); //Purpose: CANVAS fits in monitor & dimension size is known
   //Display Algorithm will populate smaller and larger dimensions
   println("Smaller Dimension is", smallerDimension, "Larger Dimension is", largerDimension);
 }//End setup
