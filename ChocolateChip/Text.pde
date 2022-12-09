@@ -1,3 +1,4 @@
+String spacear = "Press the SPACE BAR to continue";
 PFont harrington;
 //
 void textSetup() {
