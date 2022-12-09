@@ -13,12 +13,17 @@ void setup () {
 }//End setup
 //
 void draw() {
+  //Assigntment #2: OS Level Mouse Click and Splash Screen
+  if () splashScreen; //OS Level Mouse Click
+  //
 }//End draw
 
 void keyPressed() {
 }//End keyPressed
 //
 void mousePressed() {
+  //OS Level Mouse Click
+  if () ;//End OS Level Mouse Click
 }//End mousePressed
 //
 //End MAIN Program
