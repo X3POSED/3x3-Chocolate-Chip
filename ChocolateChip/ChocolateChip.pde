@@ -31,7 +31,6 @@ void keyPressed() {
   //Splash Screen SPACE BAR
   if ( OS_on==true && key== ' ' ) {
   splashScreenStart = true;
-  backgroundWhiteScreen();
   backgroundImage();
   }//End Splash Screen SPACE Bar
   //

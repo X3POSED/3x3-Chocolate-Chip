@@ -23,6 +23,9 @@ void backgroundWhiteScreen() {
 }//End backgroundWhiteScreen()
 //
 void backgroundImage() {
-  
+  backgroundWhiteScreen();
+  tint(); //Day Mode, see ternary operator
+  tint(); //Night Mode, see ternary operator
+  image( backGroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight );
 }//End backgroundImage
 //End Home Screen Subprogram
