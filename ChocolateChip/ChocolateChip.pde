@@ -1,6 +1,6 @@
 //Global Variables
 int appWidth, appHeight, smallerDimension, largerDimension;
-Boolean OS_on=false;
+Boolean OS_on=false, splashScreenStart=false;
 /* Night Mode Comment
  Purple not for Night Mode, full BLUE
  resetDefaultInk is WHITE, not Night Mode Friendly, full blue
@@ -27,6 +27,8 @@ void draw() {
 }//End draw
 
 void keyPressed() {
+  //Splash Screen SPACE BAR
+  if ( key== ' ' ) splashScreenStart = true ;
 }//End keyPressed
 //
 void mousePressed() {
