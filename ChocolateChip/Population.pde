@@ -5,6 +5,10 @@ void population() {
   startX = centerX - startWidth*1/2;
   startY = centerY - startHeight*1/2;
   //
+  backgroundX = appWidth * 0 ;
+  backgroundY = appWidth * 0;
+  backgroundWidth = appHeight;
+  backgroundHeight = appHeight;
 }//End population
 // 
 //End Population Subprogram
