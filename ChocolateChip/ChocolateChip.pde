@@ -18,6 +18,7 @@ void setup () {
   println("Smaller Dimension is", smallerDimension, "Larger Dimension is", largerDimension);
   population();
   textSetup();
+  imagePopulation();
 }//End setup
 //
 void draw() {

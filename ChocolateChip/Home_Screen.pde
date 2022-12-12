@@ -1,4 +1,5 @@
 int backgroundX, backgroundY, backgroundWidth, backgroundHeight;
+int tintDayMode=225, tintDayModeOpacity=50;
 //
 void homeScreen() {
   println("Arrived at Home Screen"); //Testing for Splash Screen Start Button
@@ -24,8 +25,8 @@ void backgroundWhiteScreen() {
 //
 void backgroundImage() {
   backgroundWhiteScreen();
-  tint(); //Day Mode, see ternary operator
-  tint(); //Night Mode, see ternary operator
+  tint( tintDayMode, tintDayModeOpacity ); //Day Mode, see ternary operator
+  //tint(  ); //Night Mode, see ternary operator
   image( backGroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight );
 }//End backgroundImage
 //End Home Screen Subprogram
