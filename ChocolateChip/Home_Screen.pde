@@ -26,7 +26,7 @@ void backgroundWhiteScreen() {
 //
 void backgroundImage() {
   backgroundWhiteScreen();
-  tint( tintDayMode, tintDayModeOpacity ); //Day Mode, see ternary operator
+  //tint( tintDayMode, tintDayModeOpacity ); //Day Mode, see ternary operator
   tint( tintRed, tintGreen, tintBlue, tintNightModeOpacity ); //Night Mode, see ternary operator
   image( backGroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight );
 }//End backgroundImage
