@@ -1,4 +1,5 @@
 int backgroundX, backgroundY, backgroundWidth, backgroundHeight;
+float quitX, quitY, quitWidth, quitHeight;
 int tintDayMode=225, tintDayModeOpacity=50;
 int tintRed=64, tintGreen=64, tintBlue=0, tintNightModeOpacity=85; //BLUE should be Zero
 //
@@ -14,6 +15,7 @@ void homeScreen() {
   - Note: must have one imag with aspect ratio
   */
   //
+
 }//End homeScreen
 //
 void backgroundWhiteScreen() {
@@ -26,8 +28,8 @@ void backgroundWhiteScreen() {
 //
 void backgroundImage() {
   backgroundWhiteScreen();
-  //tint( tintDayMode, tintDayModeOpacity ); //Day Mode, see ternary operator
-  tint( tintRed, tintGreen, tintBlue, tintNightModeOpacity ); //Night Mode, see ternary operator
+  if ( nightMode==false ) tint( tintDayMode, tintDayModeOpacity ); //Day Mode, see ternary operator
+  if ( nightMode==true ) tint( tintRed, tintGreen, tintBlue, tintNightModeOpacity ); //Night Mode, see ternary operator
   image( backGroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight );
 }//End backgroundImage
 //End Home Screen Subprogram
