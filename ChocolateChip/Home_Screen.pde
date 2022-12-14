@@ -17,7 +17,15 @@ void homeScreen() {
   println("Arrived at Home Screen"); //Testing for Splash Screen Start Button
   //
   //rect( quitX, quitY, quitWidth, quitHeight );
-  quitButtonText();
+  if ( mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight ) { //QuitButton Hoverover
+  //Cookie, aspect ratio
+  fill(white);
+  rect( quitX, quitY, quitWidth, quitHeight ); //Testing only
+  noFill();
+  } else { 
+    quitButtonText();
+  }
+  
 }//End homeScreen
 //
 void backgroundWhiteScreen() {
