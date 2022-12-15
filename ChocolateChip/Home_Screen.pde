@@ -4,28 +4,27 @@ int tintDayMode=255, tintDayModeOpacity=50;
 int tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85; //BLUE should be Zero or as close to it
 //
 /* Home Screen Expectations
-  - Background image using tint()
-  - 9 evenly spaced rectangles, Assignment #3
-  - Quit Button and Reset Button (Splash Screen Start Button)
-  - In each: image, text, 2D Shape, Button
-  - Narrative through the 9 rectangles
-  - See Case Study
-  - Note: must have one image with aspect ratio
-  */
- //
+ - Background image using tint()
+ - 9 evenly spaced rectangles, Assignment #3
+ - Quit Button and Reset Button (Splash Screen Start Button)
+ - In each: image, text, 2D Shape, Button
+ - Narrative through the 9 rectangles
+ - See Case Study
+ - Note: must have one image with aspect ratio
+ */
+//
 void homeScreen() {
   println("Arrived at Home Screen"); //Testing for Splash Screen Start Button
   //
   //rect( quitX, quitY, quitWidth, quitHeight );
   if ( mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight ) { //QuitButton Hoverover
-  //Cookie, aspect ratio
-  fill(white);
-  rect( quitX, quitY, quitWidth, quitHeight ); //Testing only
-  noFill();
-  } else { 
+    //Cookie, aspect ratio
+    fill(white);
+    rect( quitX, quitY, quitWidth, quitHeight ); //testing only
+    noFill();
+  } else {
     quitButtonText();
   }
-  
 }//End homeScreen
 //
 void backgroundWhiteScreen() {
