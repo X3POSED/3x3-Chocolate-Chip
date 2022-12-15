@@ -8,7 +8,7 @@ void quitButtonImage() {
   quitButtonImage = backGroundImage; 
   rect( quitButtonImageRectX, quitButtonImageRectY, quitButtonImageRectWidth, quitButtonImageRectHeight );
   //Aspect Ratio
-  Float quitButtonImageWidth=2048, quitButtonImageHeight=1152;
+  float quitButtonImageWidth=2048, quitButtonImageHeight=1152;
   //Following vars must be populated or debugger error b/c IF
   float quitButtonImageWIdht_Adjusted=0.0, quitButtonImageHeight_Adjusted=0.0;
   float quitButtonImageWidth_Calculated=0.0, quitButtonImageHeight_Calculated=0.0;
@@ -23,6 +23,9 @@ void quitButtonImage() {
     imageHeightRatio = smallerDimension / largerDimension; //value<1, main point of algorithm
     quitButtonImageHeight_Calculated = quitButtonImageWidth_Adjusted * imageHeightRatio;
     //
+    //Debugging: x-value must be centered
+    float centerX=appWidht*1/2;
+    quitButtonImageRectX= centerX - quitButtonImageWidth_Calculated:
     image( quitButtonImage, quitButtonImageRectX, quitButtonImageRectY, quitButtonImageWidth_Adjusted, quitButtonImageHeight_Calculated);
     //
   } else { //Portrait
