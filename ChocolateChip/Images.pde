@@ -15,13 +15,16 @@ void quitButtonImage() {
   float largerDimension=0.0, smallerDimension=0.0;
   float imageWidthRatio=0.0, imageHeightRatio=0.0;
   //
-  if ( quitButtonImageWidth >= quitButtonImageHeight) {//Image's largest dimension,
+  if ( quitButtonImageWidth >= quitButtonImageHeight ) {//Image's largest dimension, Landscape or Square
     largerDimension = quitButtonImageWidth;
     smallerDimension = quitButtonImageHeight;
     //
     quitButtonImageWidth_Adjusted = quitButtonImageRectWidth;
-    imageHeightRatio = smallerDimension / largerDimension; //Value<1, main point of algorith
+    imageHeightRatio = smallerDimension / largerDimension; //value<1, main point of algorithm
     quitButtonImageHeight_Calculated = quitButtonImageWidth_Adjusted * imageHeightRatio;
+    //
+    image( quitButtonImage, quitButtonImageRectX, quitButtonImageRectY, quitButtonImageWidth_Adjusted, quitButtonImageHeight_Calculated);
+    //
   } else {
     largerDimension = quitButtonImageHeight;
     smallerDimension = quitButtonImageWidth;
@@ -29,7 +32,8 @@ void quitButtonImage() {
   }
   //
   //No Aspect Ratio
-  image( quitButtonImage, quitButtonImageRectX, quitButtonImageRectY, quitButtonImageRectWidth, quitButtonImageRectHeight );
-} //End quitButtonImage
+  image( quitButtonImage, quitButtonImageRectX, quitButtonImageRectY, quitButtonImageRectWidth, quitButtonImageRectHeight);
+  //
+}//End quitButtonImage
 //
 //End Image Subprogram
