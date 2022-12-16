@@ -1,48 +1,52 @@
-int backgroundX, backgroundY, backgroundWidth, backgroundHeight;
-float quitX, quitY, quitWidth, quitHeight;
-float quitButtonImageRectX, quitButtonImageRectY, quitButtonImageRectWidth, quitButtonImageRectHeight;
-int tintDayMode=255, tintDayModeOpacity=50;
-int tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85; //BLUE should be Zero or as close to it
+PImage backGroundImage, quitButtonImage;
 //
-/* Home Screen Expectations
- - Background image using tint()
- - 9 evenly spaced rectangles, Assignment #3
- - Quit Button and Reset Button (Splash Screen Start Button)
- - In each: image, text, 2D Shape, Button
- - Narrative through the 9 rectangles
- - See Case Study
- - Note: must have one image with aspect ratio
- */
+void imagePopulation() {
+  backGroundImage = loadImage ("../Images/thick-chocolate-chip-cookies-recipe-14-scaled.jpg");
+}//End imagePopulation
 //
-void homeScreen() {
-  println("Arrived at Home Screen"); //Testing for Splash Screen Start Button
+void quitButtonImage() {
+  quitButtonImage = backGroundImage;
+  rect( quitButtonImageRectX, quitButtonImageRectY, quitButtonImageRectWidth, quitButtonImageRectHeight );
+  //Aspect Ratio
+  float quitButtonImageWidth=1707, quitButtonImageHeight=2506;
+  //Following vars must be populated or debugger error b/c IF
+  float quitButtonImageWidth_Adjusted=0.0, quitButtonImageHeight_Adjusted=0.0;
+  float quitButtonImageWidth_Calculated=0.0, quitButtonImageHeight_Calculated=0.0;
+  float largerDimension=0.0, smallerDimension=0.0;
+  float imageWidthRatio=0.0, imageHeightRatio=0.0;
   //
-  //rect( quitX, quitY, quitWidth, quitHeight );
-  if ( mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight ) { //QuitButton Hoverover
-    quitButtonImage(); //Cookie, aspect ratio
-    /*
-    fill(white);
-    rect( quitX, quitY, quitWidth, quitHeight ); //testing only
-    noFill();
-    */
-  } else {
-    quitButtonText();
+  if ( quitButtonImageWidth >= quitButtonImageHeight ) {//Image's largest dimension, Landscape or Square
+    largerDimension = quitButtonImageWidth;
+    smallerDimension = quitButtonImageHeight;
+    //
+    quitButtonImageWidth_Adjusted = quitButtonImageRectWidth; //Uses builtin compression algorithm
+    imageHeightRatio = smallerDimension / largerDimension; //value<1, main point of algorithm
+    quitButtonImageHeight_Calculated = quitButtonImageWidth_Adjusted * imageHeightRatio;
+    //
+    //Debugging: x-value must be centered
+    float centerX=appWidth*1/2;
+    quitButtonImageRectX = centerX - quitButtonImageWidth_Adjusted * 1/2;
+    image( quitButtonImage, quitButtonImageRectX, quitButtonImageRectY, quitButtonImageWidth_Adjusted, quitButtonImageHeight_Calculated);
+    //
+  } else { //Portrait
+    largerDimension = quitButtonImageHeight;
+    smallerDimension = quitButtonImageWidth;
+    //
+    quitButtonImageHeight_Adjusted = quitButtonImageRectHeight; //Uses builtin compression algorithm
+    imageWidthRatio = smallerDimension / largerDimension; //value<1, main point of algorithm
+    quitButtonImageWidth_Calculated = quitButtonImageHeight_Adjusted * imageWidthRatio;
+    //
+    //Debugging: x-value must be centered
+    float centerX=appWidth*1/2;
+    quitButtonImageRectX = centerX - quitButtonImageWidth_Calculated * 1/2;
+    image( quitButtonImage, quitButtonImageRectX, quitButtonImageRectY, quitButtonImageWidth_Calculated, quitButtonImageHeight_Adjusted);
+    //
   }
-}//End homeScreen
+  //
+  /*No Aspect Ratio
+   image( quitButtonImage, quitButtonImageRectX, quitButtonImageRectY, quitButtonImageRectWidth, quitButtonImageRectHeight);
+   */
+  //
+}//End quitButtonImage
 //
-void backgroundWhiteScreen() {
-  fill(white);
-  noStroke();
-  rect( backgroundX, backgroundY, backgroundWidth, backgroundHeight );
-  strokeWeight(1); //Reset: 1 pixel
-  fill(white); //Reset: white
-}//End backgroundWhiteScreen()
-//
-void backgroundImage() {
-  backgroundWhiteScreen();
-  if ( nightMode==false ) tint( tintDayMode, tintDayModeOpacity ); //Day Mode, see ternary operator
-  if ( nightMode==true ) tint( tintRed, tintGreen, tintBlue, tintNightModeOpacity ); //Night Mode, see ternary operator
-  image( backGroundImage, backgroundX, backgroundY, backgroundWidth, backgroundHeight );
-}//End backgroundImage
-//
-//End Home Screen Subprogram
+//End Image Subprogram
