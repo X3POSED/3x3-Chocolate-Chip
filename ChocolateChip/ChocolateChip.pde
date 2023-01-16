@@ -9,7 +9,7 @@ Boolean nightMode=false;
 color purple=#FF00FF, resetDefaultInk=#000000, white=#FFFFFF;
 //
 void setup() {
-  size(600, 400);
+  size(1980, 1080);
   //fullScreen(); //displayWidth //displayHeight
   appWidth = width;
   appHeight = height;
