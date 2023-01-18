@@ -12,7 +12,7 @@ void display(){
     if ( appWidth > displayWidth ) { //Fitting CANVAS into Monitor Display
       appWidth=0;
       appHeight=0;
-      println("STOP, is broken");
+      println("Dude, It Broke");
     } else {
       //Empty ELSE
     }
